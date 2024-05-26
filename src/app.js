@@ -9,7 +9,7 @@ import {
 const app = async () => {
   let currentMovieListPage = 1;
 
-  const { results: movies } = await getPopularMovies({
+  const { results: movies, total_pages: totalPages } = await getPopularMovies({
     page: currentMovieListPage,
   });
 
@@ -19,6 +19,9 @@ const app = async () => {
     });
 
     renderMovieList(movies, movieListContainer);
+    if (page === totalPages) {
+      document.querySelector(".view-more").remove();
+    }
     currentMovieListPage = page;
   };
 

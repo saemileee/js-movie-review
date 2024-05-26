@@ -1,4 +1,5 @@
 import MovieItem from "../components/MovieItem";
+import { MOVIE_THUMBNAIL_BASE_URL } from "../constant/api";
 
 export const renderComponent = (component, container) => {
   container.appendChild(component);
@@ -18,9 +19,6 @@ export const renderContainers = () => {
 
   return { movieListContainer, viewMoreButtonContainer };
 };
-
-const MOVIE_THUMBNAIL_BASE_URL =
-  "https://media.themoviedb.org/t/p/w220_and_h330_face";
 
 export const renderMovieList = (movies, container) => {
   movies.forEach((movie) => {

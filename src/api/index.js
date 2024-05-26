@@ -1,6 +1,5 @@
+import { MOVIE_BASE_URL } from "../constant/api";
 import apiClient from "./ApiClient";
-
-const MOVIE_BASE_URL = "https://api.themoviedb.org/3/movie";
 
 const movieApiClient = new apiClient(MOVIE_BASE_URL);
 const movieApiKey = process.env.API_KEY;
